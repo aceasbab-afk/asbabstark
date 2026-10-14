@@ -44,6 +44,8 @@ Owner: Sales & Ops · Seller: AmanaPS (https://amanaps.com/) · Status: ready to
 **Exclude**
 - Hospitals, health systems, and companies with more than 200 employees
 - Other billing, RCM, or BPO companies (competitors). Exclude company keywords "medical billing company", "revenue cycle management", "RCM services", "BPO", "outsourcing".
+- **Direct Primary Care (DPC)** practices. They charge a cash membership and usually don't bill insurance, so they have little billing to outsource.
+- Clinics run by retailers or telehealth brands (e.g. grocery-chain clinics, consumer telehealth)
 - Staffing agencies and software vendors
 
 ---
@@ -54,7 +56,7 @@ Owner: Sales & Ops · Seller: AmanaPS (https://amanaps.com/) · Status: ready to
 |---|---|
 | Industry | Medical Practice; Hospital & Health Care; Mental Health Care; Health, Wellness & Fitness (for PT / chiro) |
 | Company keywords (include) | clinic, medical practice, family medicine, pediatrics, behavioral health, physical therapy, chiropractic, podiatry, pain management, dermatology, cardiology, urgent care |
-| Company keywords (exclude) | medical billing, revenue cycle, RCM, BPO, outsourcing, staffing, software |
+| Company keywords (exclude) | medical billing, revenue cycle, RCM, BPO, outsourcing, staffing, software, direct primary care, DPC, telehealth |
 | # Employees | 1–10, 11–20, 21–50 |
 | Company HQ location | United States (start with 2–3 test states) |
 | Job titles | the titles from the table in §2 |
@@ -84,7 +86,12 @@ Build three saved lists:
 /apollo:sequence-load <sequence name> — Practice Managers at independent clinics hiring medical billers, 1-50 employees, US
 ```
 
-**Credit discipline:** searching costs nothing. Revealing emails and phone numbers spends credits.
+**What the current Apollo plan allows (free plan, checked 2026-10-14)**
+- **Free:** company lookup by location, size, and keywords (name and domain only).
+- **Not included:** people search, plus advanced filters such as job postings. List A and the people step of `/apollo:prospect` need a paid plan or trial.
+- **Costs credits:** company search with full details is 1 credit per request. Revealing a person's email or phone uses lead / direct-dial credits.
+
+**Credit discipline:** revealing emails and phone numbers spends credits.
 - Claude states the credit cost before every enrichment.
 - Enrich **List A in full**. Enrich **only Strong / Good ICP-fit leads** from Lists B and C.
 - Reveal mobile numbers only for Priority 1–2 contacts at accounts with buying signals.
